@@ -40,19 +40,7 @@
 				<ul class="systems">
 					
 					<li>
-						kvm02-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						network-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						web01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						network-ndw01 <span class="status operational">operational</span>
+						kvm03-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
@@ -60,11 +48,11 @@
 					</li>
 					
 					<li>
-						mc02-rot01 <span class="status operational">operational</span>
+						network-ndw01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
-						mc01-rot01 <span class="status operational">operational</span>
+						mc02-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
@@ -72,15 +60,27 @@
 					</li>
 					
 					<li>
-						mc03-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
 						network-rot03 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
-						kvm03-rot01 <span class="status operational">operational</span>
+						kvm02-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						web01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						network-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						mc03-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						mc01-rot01 <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
@@ -128,6 +128,9 @@ We do no longer see any errors on this linecard interface and consider this case
 		</main>
 		
 		<script>
+		if(window.location.href.indexOf('index.html') == -1) {
+ -			window.location = '/index.html';		
+ -		}
 		// Check if a new cache is available on page load.
 		window.addEventListener('load', function(e) {
 		
