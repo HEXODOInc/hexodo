@@ -109,6 +109,8 @@
         if (pendingRequests[url])
           continue;
 
+        url = url + "?" + new Date().getTime();
+
         Live.getHead(url, function (url, newInfo) {
           var oldInfo = resources[url],
               hasChanged = false;
