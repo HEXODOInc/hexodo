@@ -46,6 +46,15 @@
 					</div>
 					{% endfor %}
 				{% endif %}
+
+				<h4>Systems</h4>
+				<ul class="systems">
+					{% for system, data in systems.items() %}
+					<li>
+						{{ system }} <span class="status {{ data.status }}">{{ data.status }}</span>
+					</li>
+					{% endfor %}
+				</ul>
 				
 				<h4>Incidents</h4>
 				{% if incidents %}
@@ -75,15 +84,6 @@
 				{% else %}
 					<em>No incidents in the past 90 days.</em>
 				{% endif %}
-
-				<h4>Systems</h4>
-				<ul class="systems">
-					{% for system, data in systems.items() %}
-					<li>
-						{{ system }} <span class="status {{ data.status }}">{{ data.status }}</span>
-					</li>
-					{% endfor %}
-				</ul>
 			</section>
 
 
