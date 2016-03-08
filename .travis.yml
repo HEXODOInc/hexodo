@@ -6,6 +6,6 @@ deploy:
     branch:
       - gh-pages
 branches:
-  on:
+  only:
     - master
     - gh-pages
