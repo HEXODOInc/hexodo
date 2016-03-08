@@ -1,1 +1,1 @@
-Visit this site at https://casdr.github.io/hexodo/
+Visit this site at http://status.hexodo.net
