@@ -40,23 +40,11 @@
 				<ul class="systems">
 					
 					<li>
-						mc03-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						mc01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm03-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
 						kvm01-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
-						web01-rot01 <span class="status operational">operational</span>
+						kvm03-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
@@ -72,11 +60,27 @@
 					</li>
 					
 					<li>
+						kvm04-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						network-rot03 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						web01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
 						network-ndw01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
-						kvm04-rot01 <span class="status operational">operational</span>
+						mc01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						mc03-rot01 <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
@@ -132,9 +136,7 @@ We do no longer see any errors on this linecard interface and consider this case
 		      // Browser downloaded a new app cache.
 		      // Swap it in and reload the page to get the new hotness.
 		      window.applicationCache.swapCache();
-		      if (confirm('A new version of this site is available. Load it?')) {
-		        window.location.reload();
-		      }
+		      window.location.reload();
 		    } else {
 		      // Manifest didn't changed. Nothing new to server.
 		    }
