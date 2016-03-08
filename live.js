@@ -27,7 +27,7 @@
       pendingRequests = {},
       currentLinkElements = {},
       oldLinkElements = {},
-      interval = 1000,
+      interval = 10000,
       loaded = false,
       active = { "html": 1, "css": 0, "js": 0 };
 
@@ -105,11 +105,11 @@
 
     // check all tracking resources for changes
     checkForChanges: function () {
-      for (var url in resources) {
-        if (pendingRequests[url])
+      for (var tempurl in resources) {
+        if (pendingRequests[tempurl])
           continue;
 
-        url = url + "?" + new Date().getTime();
+        var url = tempurl + "?" + new Date().getTime();
 
         Live.getHead(url, function (url, newInfo) {
           var oldInfo = resources[url],
