@@ -2,6 +2,9 @@ language: bash
 deploy:
   provider: script
   script: update.sh
+  on:
+    branch:
+      - gh-pages
 branches:
   only:
     - master
