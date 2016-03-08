@@ -72,7 +72,7 @@
 						{% endfor %}
 						<hr/>
 
-						<span class="title">{{ incident.title }} ({{ incident.user }})</span>
+						<span class="title">{{ incident.title }} ({{ incident }})</span>
 						<p>{{ incident.body }}</p>
 						{% for update in incident.updates %}
 							<p><em>Update {{ update.created }}</em><br/>
@@ -98,8 +98,8 @@
 		
 		<script>
 		if(window.location.href.indexOf('index.html') == -1) {
- -			window.location = '/index.html';		
- -		}
+			window.location = '/index.html';		
+		}
 		// Check if a new cache is available on page load.
 		window.addEventListener('load', function(e) {
 		
