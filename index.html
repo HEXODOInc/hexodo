@@ -40,11 +40,31 @@
 				<ul class="systems">
 					
 					<li>
+						mc03-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
 						mc01-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
+						kvm03-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						kvm01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
 						web01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						network-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						kvm02-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
@@ -56,27 +76,7 @@
 					</li>
 					
 					<li>
-						kvm01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm03-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm02-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						network-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
 						kvm04-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						mc03-rot01 <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
@@ -122,6 +122,26 @@ We do no longer see any errors on this linecard interface and consider this case
 			</footer>
 
 		</main>
+		
+		<script>
+		// Check if a new cache is available on page load.
+		window.addEventListener('load', function(e) {
+		
+		  window.applicationCache.addEventListener('updateready', function(e) {
+		    if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+		      // Browser downloaded a new app cache.
+		      // Swap it in and reload the page to get the new hotness.
+		      window.applicationCache.swapCache();
+		      if (confirm('A new version of this site is available. Load it?')) {
+		        window.location.reload();
+		      }
+		    } else {
+		      // Manifest didn't changed. Nothing new to server.
+		    }
+		  }, false);
+		
+		}, false);
+		</script>
 
 	</body>
 </html>
