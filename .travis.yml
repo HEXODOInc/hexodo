@@ -1,11 +1,6 @@
 language: bash
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: update.sh
-  on:
-    branch:
-      - gh-pages
+script:
+  - bash update.sh
 branches:
   only:
     - master
