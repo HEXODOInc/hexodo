@@ -36,16 +36,30 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational">
-						All Systems operational.
+					
+					<div class="panel degraded performance">
+						Degraded performance on network-ndw01.
 					</div>
+					
 				
 
 				<h4>Systems</h4>
 				<ul class="systems">
 					
 					<li>
-						mc03-rot01 <span class="status operational">operational</span>
+						kvm03-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						mc01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						kvm01-rot01 <span class="status operational">operational</span>
+					</li>
+					
+					<li>
+						web01-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
@@ -57,23 +71,15 @@
 					</li>
 					
 					<li>
+						network-ndw01 <span class="status degraded performance">degraded performance</span>
+					</li>
+					
+					<li>
 						kvm04-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
-						kvm01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						mc02-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						web01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						network-ndw01 <span class="status operational">operational</span>
+						mc03-rot01 <span class="status operational">operational</span>
 					</li>
 					
 					<li>
@@ -81,17 +87,33 @@
 					</li>
 					
 					<li>
-						mc01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm03-rot01 <span class="status operational">operational</span>
+						mc02-rot01 <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
 				
 				<h4>Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date">2016-03-28 12:17:20</span>
+
+						
+							<span class="label degraded performance float-right">degraded performance</span>
+						
+						
+							<span class="label system float-right">network-ndw01</span>
+						
+						<hr/>
+
+						<span class="title">Increased network latency</span>
+						<p>We have discovered hardware issues on our AMS-IX facing routers. Our network team has been dispatched on site in order to investigate and resolve the problem.
+
+An update will be send through this channel once we have more information available.
+
+We are sorry for the inconvenience.</p>
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date">2016-03-16 22:13:12</span>
