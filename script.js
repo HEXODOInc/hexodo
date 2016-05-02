@@ -74,8 +74,15 @@ function render() {
             }
             if(issue.comments > 0) {
               var updates = request(issue.comments_url);
+              issue.updates = [];
               if(updates != undefined) {
-                issue.updates = updates;
+                updates.forEach(function (update) {
+                  if(config.collaborators.indexOf(update.user.login) != -1) {
+                    update.created_at = new Date(update.created_at);
+                    issue.updates.push(update);
+                  }
+                });
+
               }
             }
 
