@@ -71,8 +71,8 @@
       <span class="title">{{ title }}</span>
       <p>{{ body }}</p>
       {{#updates}}
-      <p><em>Update {{ created_at }}</em><br />
-        {{ body }}
+      <p><b><em>Update - {{ created_at }} by {{ user.login }}</em></b><br />
+        <em>{{ body }}</em>
       </p>
       {{/updates}}
     </div>
