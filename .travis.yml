@@ -1,7 +1,0 @@
-language: bash
-script:
-  - bash update.sh
-branches:
-  only:
-    - master
-    - gh-pages

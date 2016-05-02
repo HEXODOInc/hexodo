@@ -1,278 +1,107 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="robots" content="index, follow">
-		<meta http-equiv="cache-control" content="max-age=0" />
-		<meta http-equiv="cache-control" content="no-cache" />
-		<meta http-equiv="expires" content="0" />
-		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-		<meta http-equiv="pragma" content="no-cache" />
-		<title>HEXODO Status</title>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-		<link rel="stylesheet" href="milligram.min.css">
-		<link rel="stylesheet" href="style.css">
-		
-		<link rel="icon" href="https://raw.githubusercontent.com/pyupio/statuspage/master/template/favicon.png">
-	</head>
-	<body>
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <title>HEXODO Status</title>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <link rel="stylesheet" href="milligram.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-		<main class="wrapper">
+<main class="wrapper">
 
-			<nav class="navigation">
-				<section class="container">
+  <nav class="navigation">
+    <section class="container">
+      <a class="navigation-title" href="">
+        <h1 class="title">HEXODO Status</h1>
+        <div id="load-indicator" style="float: right;"><div class="spinner"></div></div>
+      </a>
+    </section>
+  </nav>
+  <section class="container" id="main">
 
-					<a class="navigation-title" href="">
-						
-						<img class="img" src="logo.png" height="30">
-						<h1 class="title">Status</h1>
-					</a>
+  </section>
 
+  <script id="template" type="x-tmpl-mustache">
 
+    {{#panels.0}}
+      {{#panels}}
+      <div class="panel {{ status }}">
+      {{ status }} on {{#systems}}{{.}}{{/systems}}.
+      </div>
+      {{/panels}}
+    {{/panels.0}}
 
-				</section>
-			</nav>
-
-			<section class="container" id="main">
-				
-					
-					<div class="panel degraded performance">
-						Degraded performance on network-ndw01.
-					</div>
-					
-				
-
-				<h4>Systems</h4>
-				<ul class="systems">
-					
-					<li>
-						network-ndw01 <span class="status degraded performance">degraded performance</span>
-					</li>
-					
-					<li>
-						kvm03-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						network-rot03 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						mc01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						network-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm02-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm04-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						mc02-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						mc03-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						kvm01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-					<li>
-						web01-rot01 <span class="status operational">operational</span>
-					</li>
-					
-				</ul>
-				
-				<h4>Incidents</h4>
-				
-					
-					<div class="incident">
-						<span class="date">2016-05-02 08:43:58</span>
-
-						
-							<span class="label degraded performance float-right">degraded performance</span>
-						
-						
-							<span class="label system float-right">network-ndw01</span>
-						
-						<hr/>
-
-						<span class="title">Partial network outage ndw1</span>
-						<p>Friday 29/04/16 a network outage occurred due to a memory leak in the software of our routers. A software update has been performed on a new supervisor but unfortunately this morning the same issue took place.
-
-At this moment we have inserted two new supervisors in both affected routers and our network staff is thoroughly monitoring the situation.
-
-At this moment it seems no new errors are being displayed in the logging of our routers. Our network staff will provide an update through this channel once more information is available.
-
-In case your services still experience any problems or when you have any questions please contact our technical staff on http://hexodo.net/contact.
-
-Our sincere apologies for the inconvenience and thank you for your understanding.</p>
-						
-							<p><em>Update 2016-05-02 08:45:16</em><br/>
-							After investigation our network staff needs to perform a last emergency maintenance by switching over from active supervisor to the stand-by supervisor on our core infrastructure.
-
-The switch-over should not have any impact on customer services but can result in some minor packet loss or increased latency on some connections.
-We have planned a maintenance window of 15 minutes on 05//02/16 11.00 CEST.
-							</p>
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date">2016-03-28 12:17:20</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">network-ndw01</span>
-						
-						<hr/>
-
-						<span class="title">Increased network latency</span>
-						<p>We have discovered hardware issues on our AMS-IX facing routers. Our network team has been dispatched on site in order to investigate and resolve the problem.
-
-An update will be send through this channel once we have more information available.
-
-We are sorry for the inconvenience.</p>
-						
-							<p><em>Update 2016-03-28 13:58:16</em><br/>
-							Our network team has discovered a faulty supervisor on the AMS-IX facing router. Our network team has replaced this supervisor and all interfaces have been brought back online.
-
-We do no longer see any errors on this router and consider this case closed.
-							</p>
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date">2016-03-16 22:13:12</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">kvm03-rot01</span>
-						
-						<hr/>
-
-						<span class="title">kvm03-rot01 outage</span>
-						<p>The VPS node kvm03-rot01 is currently offline. We're investigating the reason of this.</p>
-						
-							<p><em>Update 2016-03-16 22:17:34</em><br/>
-							The issue has been resolved. There was an issue with the switch configuration because of the event earlier today.
-							</p>
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date">2016-03-16 17:48:58</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">network-rot01</span>
-						
-						<hr/>
-
-						<span class="title">Network issues rot01</span>
-						<p>Currently, the network in rot01 is down. We're working hard to fix this issue.</p>
-						
-							<p><em>Update 2016-03-16 20:18:30</em><br/>
-							This issue has been fixed. One VPS used a large amount of IPs, we're going to investigate how this happened and how we can prevent this in the future.
-							</p>
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date">2016-03-16 14:51:27</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">network-rot01</span>
-						
-							<span class="label system float-right">network-rot03</span>
-						
-						<hr/>
-
-						<span class="title">Packetloss in Rotterdam</span>
-						<p>We're experiencing packetloss in our Rotterdam locations. We're currently investigating the cause of this issue.</p>
-						
-							<p><em>Update 2016-03-16 14:56:06</em><br/>
-							The issue seems to be resolved. We'll keep watching the network activity.
-							</p>
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date">2016-03-08 14:01:53</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">network-ndw01</span>
-						
-						<hr/>
-
-						<span class="title">Increased network latency</span>
-						<p>Around 11:00 a problem occurred on one of our core routers linecards.
-
-Our network team discovered the issue and is working for a solution at this moment.
-
-Despite the redundancy of our core network there might be periods of slight packet loss or increased latency.</p>
-						
-							<p><em>Update 2016-03-08 14:05:33</em><br/>
-							Our network team has discovered a faulty linecard on one of our core routers. Our network team has replaced this linecard and all interfaces have been brought back online.
-
-We do no longer see any errors on this linecard interface and consider this case closed.
-							</p>
-						
-					</div>
-					
-				
-			</section>
+    {{^panels.0}}
+    <div class="panel operational">
+      All Systems operational.
+    </div>
+    {{/panels.0}}
 
 
-			<footer class="footer">
-				<section class="container">
-					<hr/>
-					<p>HEXODO status</p>
-				</section>
-			</footer>
+    <h4>Systems</h4>
+    <ul class="systems">
+      {{#systems}}
+      <li>
+        {{ name }} <span class="status {{ status }}">{{ status }}</span>
+      </li>
+      {{/systems}}
+    </ul>
 
-		</main>
-		
-		<script>
-		if(window.location.href.indexOf('index.html') == -1) {
-			window.location = '/index.html';		
-		}
-		// Check if a new cache is available on page load.
-		window.addEventListener('load', function(e) {
-		
-		  window.applicationCache.addEventListener('updateready', function(e) {
-		    if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-		      // Browser downloaded a new app cache.
-		      // Swap it in and reload the page to get the new hotness.
-		      window.applicationCache.swapCache();
-		      window.location.reload();
-		    } else {
-		      // Manifest didn't changed. Nothing new to server.
-		    }
-		  }, false);
-		
-		}, false);
-		</script>
+    <h4>Incidents</h4>
+    {{#incidents.0}}
+    {{#incidents}}
+    <div class="incident">
+      <span class="date">{{ created_at }}</span>
 
-	</body>
+
+      <span class="label {{ severity }} float-right">{{ severity }}</span>
+
+      {{#affectedSystems}}
+
+      <span class="label system float-right">{{.}}</span>
+      {{/affectedSystems}}
+      <hr/>
+
+      <span class="title">{{ title }}</span>
+      <p>{{ body }}</p>
+      {{#updates}}
+      <p><em>Update {{ created_at }}</em><br />
+        {{ body }}
+      </p>
+      {{/updates}}
+    </div>
+    {{/incidents}}
+    {{/incidents.0}}
+
+    {{^incidents.0}}
+    <em>No past incidents.</em>
+    {{/incidents.0}}
+  </script>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="mustache.min.js"></script>
+<script src="lockr.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+
+  var config = {
+    "repo": "hexodoinc/status",
+    "collaborators": [
+      "casdr",
+      "cwosinga"
+    ]
+  };
+
+  render();
+  setInterval(render, 10000);
+
+</script>
+
+</body>
 </html>
